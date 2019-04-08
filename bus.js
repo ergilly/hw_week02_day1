@@ -26,7 +26,10 @@ Bus.prototype.dropOff = function (passenger) {
 };
 
 Bus.prototype.empty = function () {
-  this.passengers = [];
+  for (var i = 0; i < this.passengers.length; i++) {
+    this.passengers.splice(i,1);
+    i--
+  }
 };
 
 Bus.prototype.pickUpFromStop = function (bus_stop) {
